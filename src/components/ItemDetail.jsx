@@ -1,24 +1,17 @@
-import React, {useEffect, useState} from 'react'
-import { getProducts } from '../data/data'
-import { useParams } from 'react-router-dom'
+import React from 'react'
+import ItemCount from './ItemCount'
 
-const ItemDetail = () => {
+const ItemDetail = (props) => {
 
-const {id} = useParams();
-const [prod, setProd] = useState({})
-
-useEffect(()=>{
-    getProducts()
-    .then(res => setProd(res.find((item)=>item.id === parseInt(id))))
-  }, [id]);
 
   return (
     <div className="detalles">
-        <div className="productos__detalles">
-        <img src={prod.img} className="card-img-top productos__img detalles__img"/>
-        <h5 className="card-title productos__nombre">{prod.name}</h5>
-        <p className="productos__precio">${prod.price}</p>
-        <p>{prod.des}</p>
+    <div className="productos__detalles">
+    <img src={props.imageId} className="card-img-top productos__img detalles__img"/>
+    <h5 className="card-title productos__nombre">{props.title}</h5>
+    <p className="productos__precio">${props.price}</p>
+    <p>{props.description}</p>
+    <ItemCount id={props.id} title={props.title} imageId={props.imageId} type={props.type} price={props.price} description={props.description} key={props.id}/>
     </div>
     </div>
   )

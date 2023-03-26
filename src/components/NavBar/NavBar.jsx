@@ -1,13 +1,12 @@
 import logo from '../../img/logo.png'
-import clases from '../../styles.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 import React from 'react'
 
 
 
-const NavBar = () => {
 
+const NavBar = () => {
 
 return (
 <nav className="navbar navbar-expand-lg bg-body-tertiary nav font">

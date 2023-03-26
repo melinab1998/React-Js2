@@ -30,11 +30,13 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-right: 2rem;
+    
 }
 
 .nav__cart{
     max-width: 35px;
+    margin-right: 0.5rem;
+    
 }
 
 .nav__cart--cant{
@@ -47,11 +49,6 @@
     margin: 0.5rem 0rem 0rem 0.2rem;
 }
 
-.greeting{
-    text-align: center;
-    margin: 1rem 1rem 0rem 1rem;
-}
-
 .font{
     font-family: 'Inter', sans-serif;
     font-size: 20px;
@@ -61,12 +58,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    background-color: #fcefef;
 }
 
 .productos__img{
     max-width: 15rem;
     margin-top: 1rem;
+    
+}
 
+.productos__img--detalle{
+    border: solid rgb(240, 124, 211) 0.1rem;
 }
 
 .productos__tit{
@@ -129,13 +131,104 @@
     margin:1rem 0rem 1rem 0rem;
 }
 
-.productos{
-    background-color: #fcefef;
-}
-
 .btn{
     background-color: #81f7e5;
     color: black;
     border: #81f7e5;
-
 }
+
+.btn_count{
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.counter{
+    margin-right: 0.5rem;
+    background-color: #e595d1;
+    border-radius: 50%;
+    padding: 4px 8px;
+    color: white;
+}
+
+.btn-view{
+    max-width: 10rem;
+    margin: 1rem 0.5rem 0rem 0.5rem;
+}
+
+.cart-0{
+    font-family: 'Inter', sans-serif;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: #a8f9ff;
+}
+
+.btn-sc{
+    font-family: 'Inter', sans-serif;
+    background-color: #f7d6e0;
+    font-size: 16px;   
+    max-width: 12rem;
+    margin-top: 1rem;
+}
+
+.carrito-0{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    background-color: #fcefef;
+}
+
+.btn-x{
+    padding: 0rem;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+.tap{
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.list-group{
+    background-color: #fcefef;
+    height: 90vh;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.formulario{
+    background-color: #fcefef;
+    height: 90vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: 'Inter', sans-serif;
+}
+
+.formulario-tit{
+    font-size: 20px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.formulario-inp{
+    margin: 1rem 0.5rem 0rem 0.5rem;
+    max-width: 15rem;
+    text-align: center;
+}
+
+.formulario-tot{
+    font-size: 20px;
+    margin: 1rem 0rem 1rem 0rem;
+    text-align: center;
+}
+

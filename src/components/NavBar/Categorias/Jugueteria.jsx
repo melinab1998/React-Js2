@@ -1,23 +1,32 @@
 import React, {useEffect, useState} from 'react'
-import { getProducts } from '../../../data/data';
-import { useParams } from 'react-router-dom'
 import ItemList from '../../ItemList';
+import {getDocs, getFirestore, collection, where, query} from 'firebase/firestore'
 
 const Jugueteria = () => {
-  
-  const {type} = useParams();
-    const [cat, setCat] = useState([])
+
+  const [cat, setCat] = useState([])
     
-    useEffect(()=>{
-        getProducts()
-        .then(res => setCat(res.filter((item=>item.type.includes("Jugueteria"))))) 
-      }, [type]);
-    
+    useEffect(() => {
+      const db = getFirestore()
+
+      const q = query(
+        collection( db, 'items'),
+        where('type','==', "Jugueteria")
+      )
+
+      getDocs(q).then((snapshot) => {
+          if(snapshot === 0){
+              console.log("No hay resultados")
+          }
+      setCat(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+      })
+  }, [])
+
 
       return (
         <div className="productos">
-            {cat.map(prod => {
-            return <ItemList id={prod.id} name={prod.name} img={prod.img} type={prod.type} price={prod.price} des={prod.des} key={prod.id}/>
+            {cat.map(items => {
+            return <ItemList id={items.id} title={items.title} imageId={items.imageId} type={items.type} price={items.price} description={items.description} key={items.id}/>
             })}    
         </div>         
     )
